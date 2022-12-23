@@ -15,10 +15,9 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
     int width, height;
     Point beforePoint;
     Point afterPoint;
-    Color currentColor = Color.black;
-    float currentStroke = 5f;
+    static Color currentColor = Color.black;
+    static float currentStroke = 5f;
 
-    Graphics g = getGraphics();
     ArrayList<Geometry> drawing = new ArrayList<>();
 
     public static int mode = 0; // 0: Line, 1: Rect, 2: Circle, 3: Sketch
@@ -27,6 +26,7 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
     public void paint(Graphics g)
     {
         super.paint(g);
+        Graphics2D graphics2D = (Graphics2D) g;
 
         System.out.println("TRY");
         for(int i = 0 ; i < drawing.size() ; i++) {
@@ -40,8 +40,7 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
             int distX = abs(x1 - x2);
             int distY = abs(y1 - y2);
 
-            System.out.println("i : " + i);
-            System.out.println("mode : " + drawing.get(i).getMode());
+            ((Graphics2D) g).setStroke(new BasicStroke(drawing.get(i).getStrokeSize()));
 
             switch (drawing.get(i).getMode()) {
                 case 0 -> g.drawLine(x1, y1, x2, y2);

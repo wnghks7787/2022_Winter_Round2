@@ -12,27 +12,5 @@ public class Main {
 
         frame.add(paintPanel);
         frame.add(menuPanel);
-//        frame.pack();
-
-//        frame.getContentPane().add(paintPanel);
-//        frame.getContentPane().add(menuPanel);
     }
-
-//    btn[1].addActionListener(new ActionListener() {
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            addNumber = String.valueOf(btn[1].numValue);
-//
-//            if(labelNumber.equals("0") || flag)
-//                labelNumber = addNumber;
-//            else
-//                labelNumber += addNumber;
-//
-//            label.setText(labelNumber);
-//            flag = false;
-//            checkOp = false;
-//            opFlag = false;
-//            label.setHorizontalAlignment(SwingConstants.RIGHT);
-//        }
-//    });
 }

@@ -59,4 +59,20 @@ public class Geometry {
     public double getEndPointY() {
         return endPoint.getY();
     }
+
+    public Color getStrokeColor() {
+        return strokeColor;
+    }
+
+    public void setStrokeColor(Color strokeColor) {
+        this.strokeColor = strokeColor;
+    }
+
+    public float getStrokeSize() {
+        return strokeSize;
+    }
+
+    public void setStrokeSize(float strokeSize) {
+        this.strokeSize = strokeSize;
+    }
 }
