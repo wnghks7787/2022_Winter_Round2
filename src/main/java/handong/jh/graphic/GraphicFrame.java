@@ -12,6 +12,5 @@ public class GraphicFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
         setVisible(true);
-//        setResizable(false);
     }
 }

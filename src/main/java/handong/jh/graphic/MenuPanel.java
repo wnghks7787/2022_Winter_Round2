@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class MenuPanel extends JPanel {
 
@@ -13,8 +15,13 @@ public class MenuPanel extends JPanel {
 
         Graphics2D graphics2D = (Graphics2D)g;
         graphics2D.setStroke(new BasicStroke(6.5f));
+
+        // 그리기 도구 | 선 굵기 버튼
         g.drawLine((BTN_SIZE_W + 10) * 4 + 10, 0, (BTN_SIZE_W + 10) * 4 + 10,  getHeight());
+        // 패널 나눠지는 위치
         g.drawLine(0, getHeight(), getWidth(), getHeight());
+
+
     }
 
     static final int BTN_SIZE_W = 70;
@@ -27,6 +34,8 @@ public class MenuPanel extends JPanel {
 
         addDrawButton();
         addStrokeButton();
+        addColorButton();
+        addUndoButton();
     }
 
     void addDrawButton()
@@ -74,6 +83,7 @@ public class MenuPanel extends JPanel {
     void addStrokeButton()
     {
         JButton[] strokeBtn = new JButton[2];
+        JLabel strokeLabel = new JLabel("Stroke : 5");
 
         for(int i = 0 ; i < 2 ; i++)
         {
@@ -82,21 +92,75 @@ public class MenuPanel extends JPanel {
             strokeBtn[i].setBounds((BTN_SIZE_W + 10) * (4 + i) + 30, 10, BTN_SIZE_W, BTN_SIZE_H);
             add(strokeBtn[i]);
         }
+
+        strokeLabel.setBounds((BTN_SIZE_W + 10) * 6 + 30, 10, BTN_SIZE_W, BTN_SIZE_H);
+        add(strokeLabel);
         strokeBtn[0].setText("+");
         strokeBtn[1].setText("-");
+
+
 
         strokeBtn[0].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(PaintPanel.currentStroke < 10f)
+                if(PaintPanel.currentStroke < 10f) {
                     PaintPanel.currentStroke += 1f;
+
+                    strokeLabel.setText("Stroke : " + String.valueOf((int)PaintPanel.currentStroke));
+                }
             }
         });
         strokeBtn[1].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(PaintPanel.currentStroke > 1f)
+                if(PaintPanel.currentStroke > 1f) {
                     PaintPanel.currentStroke -= 1f;
+
+                    strokeLabel.setText("Stroke : " + String.valueOf((int)PaintPanel.currentStroke));
+                }
+            }
+        });
+    }
+
+    void addColorButton()
+    {
+        JButton colorButton = new JButton();
+        JLabel colorLabel = new JLabel();
+
+        colorButton.setBounds(700, 10, BTN_SIZE_W, BTN_SIZE_H);
+        colorLabel.setBounds(850, 10, BTN_SIZE_W, BTN_SIZE_H);
+
+        colorLabel.setOpaque(true);
+        colorLabel.setBackground(PaintPanel.currentColor);
+
+        add(colorButton);
+        add(colorLabel);
+
+        colorButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Color myColor = JColorChooser.showDialog(null, "Color", PaintPanel.currentColor);
+                if(myColor != null)
+                    colorLabel.setBackground(myColor);
+                PaintPanel.currentColor = myColor;
+            }
+        });
+    }
+
+    void addUndoButton()
+    {
+        JButton undoBtn = new JButton("Undo");
+        JButton redoBtn = new JButton("Redo");
+        undoBtn.setBounds(600, 10, BTN_SIZE_W, BTN_SIZE_H);
+        redoBtn.setBounds(650, 10, BTN_SIZE_W, BTN_SIZE_H);
+
+        add(undoBtn);
+        add(redoBtn);
+
+        undoBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PaintPanel.undo = true;
             }
         });
     }

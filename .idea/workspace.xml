@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2801c43-d249-48fc-9588-53b9b340f4ec" name="Changes" comment="Make Basic Tool(Line, Rect, Circle)">
+    <list default="true" id="c2801c43-d249-48fc-9588-53b9b340f4ec" name="Changes" comment="Stroke Size Change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/Geometry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/GraphicFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/GraphicFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/MenuPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/PaintPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/PaintPanel.java" afterDir="false" />
     </list>
@@ -35,22 +35,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,7 +67,7 @@
       <workItem from="1671703550762" duration="1823000" />
       <workItem from="1671705467695" duration="3470000" />
       <workItem from="1671709828435" duration="22176000" />
-      <workItem from="1671776595052" duration="2529000" />
+      <workItem from="1671776595052" duration="38535000" />
     </task>
     <task id="LOCAL-00001" summary="Imitial Commit">
       <created>1671684233830</created>
@@ -82,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671772620698</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Stroke Size Change">
+      <created>1671780131809</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671780131809</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +110,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Imitial Commit" />
     <MESSAGE value="Make Basic Tool(Line, Rect, Circle)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make Basic Tool(Line, Rect, Circle)" />
+    <MESSAGE value="Stroke Size Change" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stroke Size Change" />
   </component>
 </project>

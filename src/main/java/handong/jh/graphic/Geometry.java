@@ -1,6 +1,7 @@
 package handong.jh.graphic;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Geometry {
 
@@ -10,6 +11,7 @@ public class Geometry {
     private int mode;
     private Color strokeColor;
     private float strokeSize;
+    private ArrayList<Point> line;
 
     public Geometry(Point beginPoint, Point endPoint, int mode, Color strokeColor, float strokeSize)
     {
@@ -19,6 +21,14 @@ public class Geometry {
         this.strokeColor = strokeColor;
         this.strokeSize = strokeSize;
     }
+    public Geometry(Color strokeColor, float strokeSize)
+    {
+        this.line = new ArrayList<>();
+        this.mode = 3;
+        this.strokeColor = strokeColor;
+        this.strokeSize = strokeSize;
+    }
+    public Geometry(){};
 
     public Point getBeginPoint() {
         return beginPoint;
@@ -74,5 +84,13 @@ public class Geometry {
 
     public void setStrokeSize(float strokeSize) {
         this.strokeSize = strokeSize;
+    }
+
+    public ArrayList<Point> getLine() {
+        return line;
+    }
+
+    public void setLine(ArrayList<Point> line) {
+        this.line = line;
     }
 }
