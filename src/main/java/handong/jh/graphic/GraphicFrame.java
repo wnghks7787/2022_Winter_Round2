@@ -34,8 +34,8 @@ public class GraphicFrame extends JFrame {
     {
         JButton undoBtn = new JButton("Undo");
         JButton redoBtn = new JButton("Redo");
-        undoBtn.setBounds(600, 10, BTN_SIZE_W, BTN_SIZE_H);
-        redoBtn.setBounds(650, 10, BTN_SIZE_W, BTN_SIZE_H);
+        undoBtn.setBounds(680, 10, BTN_SIZE_W, BTN_SIZE_H);
+        redoBtn.setBounds(760, 10, BTN_SIZE_W, BTN_SIZE_H);
 
         menuPanel.add(undoBtn);
         menuPanel.add(redoBtn);
@@ -71,7 +71,7 @@ public class GraphicFrame extends JFrame {
         backgroundColorBtn.setBorderPainted(false);
         backgroundColorBtn.setFocusPainted(false);
         backgroundColorBtn.setBackground(Color.white);
-        backgroundColorBtn.setBounds(200, 10, BTN_SIZE_H, BTN_SIZE_H);
+        backgroundColorBtn.setBounds(600, 10, BTN_SIZE_H, BTN_SIZE_H);
 
         menuPanel.add(backgroundColorBtn);
 
@@ -91,7 +91,7 @@ public class GraphicFrame extends JFrame {
     {
         JButton clearBtn = new JButton("Clear");
 
-        clearBtn.setBounds(250, 10, BTN_SIZE_W, BTN_SIZE_H);
+        clearBtn.setBounds(850, 10, BTN_SIZE_W, BTN_SIZE_H);
 
         menuPanel.add(clearBtn);
 

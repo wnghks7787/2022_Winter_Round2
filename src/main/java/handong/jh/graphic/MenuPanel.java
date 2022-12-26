@@ -16,8 +16,10 @@ public class MenuPanel extends JPanel {
         Graphics2D graphics2D = (Graphics2D)g;
         graphics2D.setStroke(new BasicStroke(6.5f));
 
-        // 그리기 도구 | 선 굵기 버튼
-        g.drawLine((BTN_SIZE_W + 10) * 4 + 10, 0, (BTN_SIZE_W + 10) * 4 + 10,  getHeight());
+        // 그리기 도구 | 선 굵기와 색상
+        g.drawLine((BTN_SIZE_W + 5) * 4 + 5, 0, (BTN_SIZE_W + 5) * 4 + 5,  getHeight());
+        // 선 굵기와 색상 | 취소/되돌리기
+        g.drawLine(650, 0, 650, getHeight());
         // 패널 나눠지는 위치
         g.drawLine(0, getHeight(), getWidth(), getHeight());
 
@@ -29,7 +31,7 @@ public class MenuPanel extends JPanel {
     public MenuPanel(int width)
     {
         setLayout(null);
-        setBounds(0, 0, width, 100);
+        setBounds(0, 0, width, 50);
         setBackground(Color.GRAY);
 
         addDrawButton();
@@ -45,10 +47,7 @@ public class MenuPanel extends JPanel {
         {
             drawBtn[i] = new JButton();
 
-            if(i % 2 == 0)
-                drawBtn[i].setBounds((10 + BTN_SIZE_W) * (i / 2) + 5, 10, BTN_SIZE_W, BTN_SIZE_H);
-            else
-                drawBtn[i].setBounds((10 + BTN_SIZE_W) * (i / 2) + 5, 25 + (i % 2) * (BTN_SIZE_H + 10), BTN_SIZE_W, BTN_SIZE_H);
+            drawBtn[i].setBounds(BTN_SIZE_W * i + 5, 10, BTN_SIZE_W, BTN_SIZE_H);
             add(drawBtn[i]);
         }
         drawBtn[0].setText("Line");
@@ -91,11 +90,11 @@ public class MenuPanel extends JPanel {
         {
             strokeBtn[i] = new JButton();
 
-            strokeBtn[i].setBounds((BTN_SIZE_W + 10) * (4 + i) + 30, 10, BTN_SIZE_W, BTN_SIZE_H);
+            strokeBtn[i].setBounds((BTN_SIZE_W + 5) * (4 + i) + 20, 10, BTN_SIZE_W, BTN_SIZE_H);
             add(strokeBtn[i]);
         }
 
-        strokeLabel.setBounds((BTN_SIZE_W + 10) * 6 + 30, 10, BTN_SIZE_W, BTN_SIZE_H);
+        strokeLabel.setBounds((BTN_SIZE_W + 5) * 6 + 20, 10, BTN_SIZE_W, BTN_SIZE_H);
         add(strokeLabel);
         strokeBtn[0].setText("+");
         strokeBtn[1].setText("-");
@@ -128,7 +127,7 @@ public class MenuPanel extends JPanel {
     {
         JButton colorButton = new JButton();
 
-        colorButton.setBounds(700, 10, BTN_SIZE_H, BTN_SIZE_H);
+        colorButton.setBounds(550, 10, BTN_SIZE_H, BTN_SIZE_H);
 
         colorButton.setOpaque(true);
         colorButton.setBorderPainted(false);

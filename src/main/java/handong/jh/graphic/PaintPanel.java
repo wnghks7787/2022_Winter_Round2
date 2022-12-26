@@ -111,8 +111,8 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
     public PaintPanel(int width, int height)
     {
         this.width = width;
-        this.height = height - 100;
-        setBounds(0, 100, this.width, this.height);
+        this.height = height - 50;
+        setBounds(0, 50, this.width, this.height);
         setBackground(Color.WHITE);
 
         beforePoint = new Point(0, 0);
