@@ -57,17 +57,31 @@ public class Geometry {
         return beginPoint.getX();
     }
 
+    public void setBeginPointX(int beginPointX) {
+        this.beginPoint.x = beginPointX;
+    }
+
     public double getBeginPointY() {
         return beginPoint.getY();
+    }
+
+    public void setBeginPointY(int beginPointY) {
+        this.beginPoint.y = beginPointY;
     }
 
     public double getEndPointX() {
         return endPoint.getX();
     }
 
+    public void setEndPointX(int endPointX) {
+        this.endPoint.x = endPointX;
+    }
+
     public double getEndPointY() {
         return endPoint.getY();
     }
+
+//    public void
 
     public Color getStrokeColor() {
         return strokeColor;

@@ -24,6 +24,7 @@ public class GraphicFrame extends JFrame {
         add(menuPanel);
 
         addUndoButton();
+//        addSelectButton();
     }
 
     void addUndoButton()
@@ -58,4 +59,22 @@ public class GraphicFrame extends JFrame {
             }
         });
     }
+
+//    void addSelectButton()
+//    {
+//        JButton selectBtn = new JButton("select");
+//        selectBtn.setBounds(200, 20, BTN_SIZE_W, BTN_SIZE_H);
+//        menuPanel.add(selectBtn);
+//
+//        selectBtn.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if(!paintPanel.clickOn)
+//                    paintPanel.clickOn = true;
+//                else
+//                    paintPanel.clickOn = false;
+//                System.out.println("clickOn : " + paintPanel.clickOn);
+//            }
+//        });
+//    }
 }

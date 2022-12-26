@@ -29,13 +29,12 @@ public class MenuPanel extends JPanel {
     public MenuPanel(int width)
     {
         setLayout(null);
-        setBounds(0, 0, width, 50);
+        setBounds(0, 0, width, 100);
         setBackground(Color.GRAY);
 
         addDrawButton();
         addStrokeButton();
         addColorButton();
-//        addUndoButton();
     }
 
     void addDrawButton()
@@ -46,7 +45,10 @@ public class MenuPanel extends JPanel {
         {
             drawBtn[i] = new JButton();
 
-            drawBtn[i].setBounds((10 + BTN_SIZE_W)  * i + 5, 10, BTN_SIZE_W, BTN_SIZE_H);
+            if(i % 2 == 0)
+                drawBtn[i].setBounds((10 + BTN_SIZE_W) * (i / 2) + 5, 10, BTN_SIZE_W, BTN_SIZE_H);
+            else
+                drawBtn[i].setBounds((10 + BTN_SIZE_W) * (i / 2) + 5, 25 + (i % 2) * (BTN_SIZE_H + 10), BTN_SIZE_W, BTN_SIZE_H);
             add(drawBtn[i]);
         }
         drawBtn[0].setText("Line");
@@ -106,7 +108,7 @@ public class MenuPanel extends JPanel {
                 if(PaintPanel.currentStroke < 10f) {
                     PaintPanel.currentStroke += 1f;
 
-                    strokeLabel.setText("Stroke : " + String.valueOf((int)PaintPanel.currentStroke));
+                    strokeLabel.setText("Stroke : " + (int) PaintPanel.currentStroke);
                 }
             }
         });
@@ -116,7 +118,7 @@ public class MenuPanel extends JPanel {
                 if(PaintPanel.currentStroke > 1f) {
                     PaintPanel.currentStroke -= 1f;
 
-                    strokeLabel.setText("Stroke : " + String.valueOf((int)PaintPanel.currentStroke));
+                    strokeLabel.setText("Stroke : " + (int) PaintPanel.currentStroke);
                 }
             }
         });
@@ -127,10 +129,13 @@ public class MenuPanel extends JPanel {
         JButton colorButton = new JButton();
         JLabel colorLabel = new JLabel();
 
-        colorButton.setBounds(700, 10, BTN_SIZE_W, BTN_SIZE_H);
-        colorLabel.setBounds(850, 10, BTN_SIZE_W, BTN_SIZE_H);
+        colorButton.setBounds(700, 10, BTN_SIZE_H, BTN_SIZE_H);
 
         colorLabel.setOpaque(true);
+        colorButton.setOpaque(true);
+        colorButton.setBorderPainted(false);
+        colorButton.setFocusPainted(false);
+        colorButton.setBackground(PaintPanel.currentColor);
         colorLabel.setBackground(PaintPanel.currentColor);
 
         add(colorButton);
@@ -141,7 +146,7 @@ public class MenuPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 Color myColor = JColorChooser.showDialog(null, "Color", PaintPanel.currentColor);
                 if(myColor != null)
-                    colorLabel.setBackground(myColor);
+                    colorButton.setBackground(myColor);
                 PaintPanel.currentColor = myColor;
             }
         });
