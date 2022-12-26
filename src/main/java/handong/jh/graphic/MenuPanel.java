@@ -127,19 +127,15 @@ public class MenuPanel extends JPanel {
     void addColorButton()
     {
         JButton colorButton = new JButton();
-        JLabel colorLabel = new JLabel();
 
         colorButton.setBounds(700, 10, BTN_SIZE_H, BTN_SIZE_H);
 
-        colorLabel.setOpaque(true);
         colorButton.setOpaque(true);
         colorButton.setBorderPainted(false);
         colorButton.setFocusPainted(false);
         colorButton.setBackground(PaintPanel.currentColor);
-        colorLabel.setBackground(PaintPanel.currentColor);
 
         add(colorButton);
-        add(colorLabel);
 
         colorButton.addActionListener(new ActionListener() {
             @Override

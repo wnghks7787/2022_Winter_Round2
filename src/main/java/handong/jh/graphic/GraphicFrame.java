@@ -1,6 +1,7 @@
 package handong.jh.graphic;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,6 +25,8 @@ public class GraphicFrame extends JFrame {
         add(menuPanel);
 
         addUndoButton();
+        addBackgroundColorButton();
+        addClearButton();
 //        addSelectButton();
     }
 
@@ -56,6 +59,47 @@ public class GraphicFrame extends JFrame {
                     paintPanel.reDraw.remove(paintPanel.reDraw.size() - 1);
                     paintPanel.repaint();
                 }
+            }
+        });
+    }
+
+    void addBackgroundColorButton()
+    {
+        JButton backgroundColorBtn = new JButton();
+
+        backgroundColorBtn.setOpaque(true);
+        backgroundColorBtn.setBorderPainted(false);
+        backgroundColorBtn.setFocusPainted(false);
+        backgroundColorBtn.setBackground(Color.white);
+        backgroundColorBtn.setBounds(200, 10, BTN_SIZE_H, BTN_SIZE_H);
+
+        menuPanel.add(backgroundColorBtn);
+
+        backgroundColorBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Color myColor = JColorChooser.showDialog(null, "Color", PaintPanel.backgroundColor);
+                if(myColor != null) {
+                    backgroundColorBtn.setBackground(myColor);
+                    paintPanel.setBackground(myColor);
+                }
+            }
+        });
+    }
+
+    void addClearButton()
+    {
+        JButton clearBtn = new JButton("Clear");
+
+        clearBtn.setBounds(250, 10, BTN_SIZE_W, BTN_SIZE_H);
+
+        menuPanel.add(clearBtn);
+
+        clearBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                paintPanel.drawing.clear();
+                paintPanel.repaint();
             }
         });
     }

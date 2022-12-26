@@ -12,6 +12,7 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
     // 기본정보
     // 가로길이, 세로길이
     int width, height;
+    static Color backgroundColor = Color.white;
 
     // Geometry class 에 들어갈 내용들
     // beforePoint == 시작점 | afterPoint == 끝점 | mode == 현재 모드 | currentColor == 현재 색상 | currentStroke == 현재 선 굵기
@@ -232,4 +233,11 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
 
     }
 
+//    void objectGrab(MouseEvent e)
+//    {
+//        for(int i = drawing.size() - 1 ; i >= 0 ; i--)
+//        {
+//            int
+//        }
+//    }
 }
