@@ -68,7 +68,7 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
             }
             else if(drawing.get(i).getMode() == 3)
             {
-                ((Graphics2D) g).setStroke(new BasicStroke(drawing.get(i).getStrokeSize(), BasicStroke.CAP_ROUND, 0));
+                ((Graphics2D) g).setStroke(new BasicStroke(drawing.get(i).getStrokeSize(), BasicStroke.CAP_ROUND, BasicStroke.JOIN_MITER));
                 for(int j = 1 ; j < drawing.get(i).getLine().size() ; j++)
                 {
                     g.drawLine(drawing.get(i).getLine().get(j - 1).x, drawing.get(i).getLine().get(j - 1).y, drawing.get(i).getLine().get(j).x, drawing.get(i).getLine().get(j).y);
@@ -124,41 +124,7 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
 
     @Override
     public void mouseClicked(MouseEvent e) {
-//        if(clickOn)
-//        {
-//            System.out.println("x : " + e.getX() + " y : " + e.getY());
-//            selectPoint = e.getPoint();
-//            double x = selectPoint.getX();
-//            double y = selectPoint.getY();
-//            double x1 = 0, y1 = 0, x2 = 0, y2 = 0;
-//
-//            for(int i = 0 ; i < drawing.size() ; i++)
-//            {
-//                if(drawing.get(i).getMode() != 3)
-//                {
-//                    x1 = drawing.get(i).getBeginPointX();
-//                    y1 = drawing.get(i).getBeginPointY();
-//                    x2 = drawing.get(i).getEndPointX();
-//                    y2 = drawing.get(i).getEndPointY();
-//                }
-//                switch (drawing.get(i).getMode())
-//                {
-//                    case 0:
-//                        double gradient = (((y2 - y1) / (x2 - x1)) * (x - x1) - y1);
-//                        if(y >= gradient - 15 && y <= gradient + 15)
-//                        {
-//                            System.out.println("눌렸습니다.");
-//                        }
-//                        else
-//                            System.out.println("오차가 있습니다.");
-//                        break;
-//                    case 1:
-//                        System.out.println("준비중");
-//                        break;
-//                }
-//            }
-//        }
-
+        repaint();
     }
 
     public void mousePressed(MouseEvent e) {
@@ -265,4 +231,5 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
     public void mouseMoved(MouseEvent e) {
 
     }
+
 }
