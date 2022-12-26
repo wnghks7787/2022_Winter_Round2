@@ -28,7 +28,6 @@ public class Geometry {
         this.strokeColor = strokeColor;
         this.strokeSize = strokeSize;
     }
-    public Geometry(){};
 
     public Point getBeginPoint() {
         return beginPoint;

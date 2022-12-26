@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2801c43-d249-48fc-9588-53b9b340f4ec" name="Changes" comment="Stroke Size Change">
+    <list default="true" id="c2801c43-d249-48fc-9588-53b9b340f4ec" name="Changes" comment="Finish Sketch mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/Geometry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/GraphicFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/GraphicFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/MenuPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/PaintPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handong/jh/graphic/PaintPanel.java" afterDir="false" />
     </list>
@@ -67,7 +68,7 @@
       <workItem from="1671703550762" duration="1823000" />
       <workItem from="1671705467695" duration="3470000" />
       <workItem from="1671709828435" duration="22176000" />
-      <workItem from="1671776595052" duration="38535000" />
+      <workItem from="1671776595052" duration="48553000" />
     </task>
     <task id="LOCAL-00001" summary="Imitial Commit">
       <created>1671684233830</created>
@@ -90,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671780131809</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finish Sketch mode">
+      <created>1671879283857</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671879283857</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +119,7 @@
     <MESSAGE value="Imitial Commit" />
     <MESSAGE value="Make Basic Tool(Line, Rect, Circle)" />
     <MESSAGE value="Stroke Size Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stroke Size Change" />
+    <MESSAGE value="Finish Sketch mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish Sketch mode" />
   </component>
 </project>

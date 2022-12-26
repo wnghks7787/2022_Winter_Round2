@@ -4,10 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class MenuPanel extends JPanel {
+
+    public static JButton[] undoBtn = new JButton[2];
 
     @Override
     public void paint(Graphics g) {
@@ -35,7 +35,7 @@ public class MenuPanel extends JPanel {
         addDrawButton();
         addStrokeButton();
         addColorButton();
-        addUndoButton();
+//        addUndoButton();
     }
 
     void addDrawButton()
@@ -143,24 +143,6 @@ public class MenuPanel extends JPanel {
                 if(myColor != null)
                     colorLabel.setBackground(myColor);
                 PaintPanel.currentColor = myColor;
-            }
-        });
-    }
-
-    void addUndoButton()
-    {
-        JButton undoBtn = new JButton("Undo");
-        JButton redoBtn = new JButton("Redo");
-        undoBtn.setBounds(600, 10, BTN_SIZE_W, BTN_SIZE_H);
-        redoBtn.setBounds(650, 10, BTN_SIZE_W, BTN_SIZE_H);
-
-        add(undoBtn);
-        add(redoBtn);
-
-        undoBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PaintPanel.undo = true;
             }
         });
     }

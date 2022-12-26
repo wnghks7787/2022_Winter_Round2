@@ -2,9 +2,7 @@ package handong.jh.graphic;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 import static java.lang.Math.abs;
@@ -14,17 +12,19 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
     int width, height;
     Point beforePoint;
     Point afterPoint;
+    Point bandStartPoint = new Point();
+    Point bandEndPoint = new Point();
     static Color currentColor = Color.black;
     static float currentStroke = 5f;
 
-    static boolean undo = false;
-    static boolean redo = false;
-
-    boolean linedraw = false;
+    boolean lineDraw = false;
 
     ArrayList<Geometry> drawing = new ArrayList<>();
+    ArrayList<Geometry> reDraw = new ArrayList<>();
 
     public static int mode = 0; // 0: Line, 1: Rect, 2: Circle, 3: Sketch, 4: Erase, 5: Erase Object, 6: EraseAll
+
+    public float dash1[] = {3, 3f};
 
     @Override
     public void paint(Graphics g)
@@ -60,6 +60,28 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
                 }
             }
         }
+
+        ((Graphics2D) g).setStroke(new BasicStroke(currentStroke, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, dash1, 0));
+        g.setColor(currentColor);
+
+        // rubber band
+        if(mode != 3)
+        {
+            int x1 = bandStartPoint.x;
+            int y1 = bandStartPoint.y;
+            int x2 = bandEndPoint.x;
+            int y2 = bandEndPoint.y;
+
+            int minX = Math.min(x1, x2);
+            int minY = Math.min(y1, y2);
+            int distX = abs(x1 - x2);
+            int distY = abs(y1 - y2);
+            switch (mode) {
+                case 0 -> g.drawLine(x1, y1, x2, y2);
+                case 1 -> g.drawRect(minX, minY, distX, distY);
+                case 2 -> g.drawOval(minX, minY, distX, distY);
+            }
+        }
     }
 
     public PaintPanel(int width, int height)
@@ -75,16 +97,18 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
         addMouseListener(this);
         addMouseMotionListener(this);
 
-
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
+
     }
 
     public void mousePressed(MouseEvent e) {
-        if(mode != 3)
+        if(mode != 3) {
             beforePoint.setLocation(e.getX(), e.getY());
+            bandStartPoint.setLocation(e.getX(), e.getY());
+        }
         else
             drawing.add(new Geometry(currentColor, currentStroke));
     }
@@ -99,9 +123,12 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
             repaint();
             beforePoint = new Point();
             afterPoint = new Point();
+
+            bandStartPoint = new Point();
+            bandEndPoint = new Point();
         }
         if(mode == 3) {
-            linedraw = false;
+            lineDraw = false;
             System.out.println(drawing.get(drawing.size() - 1).getLine().size());
         }
     }
@@ -125,16 +152,15 @@ public class PaintPanel extends JPanel implements MouseListener, MouseMotionList
             beforePoint = new Point();
             repaint();
         }
+        else
+        {
+            bandEndPoint.setLocation(e.getX(), e.getY());
+            repaint();
+        }
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        if(undo)
-        {
-            undo = false;
 
-            drawing.remove(drawing.size() - 1);
-            repaint();
-        }
     }
 }
